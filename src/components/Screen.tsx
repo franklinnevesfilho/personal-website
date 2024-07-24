@@ -1,5 +1,5 @@
-import '../../style/Screen.css'
-import {ScreenProps} from "./types/ScreenProps.ts";
+import '../style/Screen.css'
+import {ScreenProps} from "../types";
 
 export function Screen({ title, children, id, ...props}: ScreenProps) {
     console.log("Creating screen with id: ", id);

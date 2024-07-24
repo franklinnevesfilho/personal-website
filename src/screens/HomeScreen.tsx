@@ -1,5 +1,5 @@
 import {Screen} from '../components/Screen';
-import {ScreenProps} from "../components/types/ScreenProps.ts";
+import {ScreenProps} from "../types";
 
 export function HomeScreen(props:  ScreenProps) {
     return (

@@ -1,23 +1,22 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { NavItem } from "./types/NavItem.ts";
+import { NavItem } from "../types";
 import { ThemeToggle } from "./ThemeToggle.tsx";
-import '../../style/Navbar.css';
+import '../style/Navbar.css';
 
 interface NavbarProps {
     title?: string;
     navItems: NavItem[];
 }
 
-export function Navbar({ title, navItems }: NavbarProps) {
+function Navbar({ title, navItems }: NavbarProps) {
     const [active, setActive] = useState<string>('');
     const [scrollPosition, setScrollPosition] = useState<number>(0);
 
-
     const scrollTo = (item: NavItem, event: React.MouseEvent<HTMLLIElement>) => {
         event.preventDefault();
-        const element = document.getElementById(item.id);
+        const element = document.getElementById(item.title);
         if (element) {
-            setActive(item.id);
+            setActive(item.title);
             const offset = -70
             window.scrollTo({
                 top: element.offsetTop + offset,
@@ -33,12 +32,12 @@ export function Navbar({ title, navItems }: NavbarProps) {
         let foundActiveId = '';
 
         for (const item of navItems) {
-            const element = document.getElementById(item.id);
+            const element = document.getElementById(item.title);
             if (element) {
                 const top = element.offsetTop;
                 const height = element.offsetHeight;
                 if (scrollPosition >= top && scrollPosition < top + height) {
-                    foundActiveId = item.id;
+                    foundActiveId = item.title;
                 }
             }
         }
@@ -55,7 +54,7 @@ export function Navbar({ title, navItems }: NavbarProps) {
     }, [handleScroll]);
 
     return (
-        <div className={'navbar ' + (scrollPosition > 50 ? 'navbar-scroll ': '')}>
+        <div className={'nav-container ' + (scrollPosition > 100 ? 'navbar-scroll ': 'navbar-clear ')}>
             <div className="navbar-content">
                 <div className="navbar-title">
                     <h1>{title}</h1>
@@ -64,7 +63,7 @@ export function Navbar({ title, navItems }: NavbarProps) {
                     <ul className={'nav-list'}>
                         {navItems.map((item, index) => (
                             <li
-                                className={'nav-item ' + (active === item.id ? 'active' : '')}
+                                className={'nav-item ' + (active === item.title ? 'active' : '')}
                                 key={index}
                                 onClick={(event) => scrollTo(item, event)}
                             >
@@ -78,3 +77,5 @@ export function Navbar({ title, navItems }: NavbarProps) {
         </div>
     );
 }
+
+export default Navbar;

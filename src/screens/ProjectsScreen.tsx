@@ -1,4 +1,4 @@
-import {ScreenProps} from "../components/types/ScreenProps.ts";
+import {ScreenProps} from "../types";
 import {Screen} from "../components/Screen.tsx";
 
 export function ProjectsScreen(props : ScreenProps ) {

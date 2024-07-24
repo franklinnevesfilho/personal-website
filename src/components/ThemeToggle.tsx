@@ -1,13 +1,7 @@
-import {useTheme} from "../../hooks/useTheme.ts";
-import {useState} from "react";
-import '../../style/ThemeToggle.css';
 
-// type ThemeToggleProps = {
-//     activeColor: string;
-//     inactiveColor: string;
-//     activeIcon: string;
-//     inactiveIcon: string;
-// }
+import {useState} from "react";
+import '../style/ThemeToggle.css';
+import {useTheme} from "../hooks";
 
 export function ThemeToggle() {
     const [toggleState, setToggleState] = useState(false);

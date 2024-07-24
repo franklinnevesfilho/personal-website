@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-type Theme = 'light' | 'dark';
+import { Theme } from "../types";
 
 export const useTheme = () => {
     const getMatchMedia = () => window.matchMedia('(prefers-color-scheme: dark)');
