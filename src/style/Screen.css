@@ -1,11 +1,12 @@
 .screen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
 }
 
-.navbar-title{
+
+.title{
+    font-size: 3rem;
+    font-weight: 700;
     color: var(--color-primary);
+    text-align: center;
 }

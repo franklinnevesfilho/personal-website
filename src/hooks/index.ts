@@ -1,1 +1,1 @@
-export {useTheme} from './useTheme.ts';
+export {useTheme, ThemeProvider} from './ThemeProvider'

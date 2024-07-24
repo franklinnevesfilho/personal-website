@@ -1,23 +1,25 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { NavItem } from "../types";
+import { NavItem } from "@/types";
 import { ThemeToggle } from "./ThemeToggle.tsx";
-import '../style/Navbar.css';
+import '@/style/Navbar.css';
+import {useWindowDimensions} from "@/hooks/useWindowDimensions.ts";
 
 interface NavbarProps {
     title?: string;
     navItems: NavItem[];
 }
 
-function Navbar({ title, navItems }: NavbarProps) {
+function Navbar({ title, navItems}: NavbarProps) {
     const [active, setActive] = useState<string>('');
     const [scrollPosition, setScrollPosition] = useState<number>(0);
+    const {width} = useWindowDimensions();
 
     const scrollTo = (item: NavItem, event: React.MouseEvent<HTMLLIElement>) => {
         event.preventDefault();
         const element = document.getElementById(item.title);
         if (element) {
             setActive(item.title);
-            const offset = -70
+            const offset = -80
             window.scrollTo({
                 top: element.offsetTop + offset,
                 behavior: 'smooth',
@@ -54,12 +56,15 @@ function Navbar({ title, navItems }: NavbarProps) {
     }, [handleScroll]);
 
     return (
-        <div className={'nav-container ' + (scrollPosition > 100 ? 'navbar-scroll ': 'navbar-clear ')}>
-            <div className="navbar-content">
-                <div className="navbar-title">
-                    <h1>{title}</h1>
-                </div>
-                <div className="nav">
+        <div className={'nav-container ' + (scrollPosition > 100 ? 'navbar-scroll ': '')}>
+            <div className={`navbar-content ${title || width < 760 ? 'justify-center' : 'justify-end'}`}>
+                {
+                    title &&
+                    <div className="navbar-title">
+                        <h1>{title}</h1>
+                    </div>
+                }
+                <div className={`nav w-auto`}>
                     <ul className={'nav-list'}>
                         {navItems.map((item, index) => (
                             <li

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.69 279.69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f8d71a;
+      }
+
+      .cls-2 {
+        fill: #f2a023;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="139.84" cy="139.84" r="87.57"/>
+  <polygon class="cls-2" points="139.84 0 113.39 45.82 166.3 45.82 139.84 0"/>
+  <polygon class="cls-2" points="40.96 40.96 54.65 92.06 92.06 54.65 40.96 40.96"/>
+  <polygon class="cls-2" points="0 139.84 45.82 166.3 45.82 113.39 0 139.84"/>
+  <polygon class="cls-2" points="40.96 238.73 92.06 225.04 54.65 187.63 40.96 238.73"/>
+  <polygon class="cls-2" points="139.84 279.69 166.3 233.87 113.39 233.87 139.84 279.69"/>
+  <polygon class="cls-2" points="238.73 238.73 225.04 187.63 187.63 225.04 238.73 238.73"/>
+  <polygon class="cls-2" points="279.69 139.84 233.87 113.39 233.87 166.3 279.69 139.84"/>
+  <polygon class="cls-2" points="238.73 40.96 187.63 54.65 225.04 92.06 238.73 40.96"/>
+</svg>

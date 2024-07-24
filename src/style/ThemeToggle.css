@@ -2,3 +2,7 @@
 .toggle-switch input{
     display: none;
 }
+
+.w-15{
+    width: 5rem;
+}

@@ -1,12 +1,11 @@
-import '../style/Screen.css'
-import {ScreenProps} from "../types";
+import {ScreenProps} from "@/types";
+import '@/style/Screen.css'
 
 export function Screen({ title, children, id, ...props}: ScreenProps) {
     console.log("Creating screen with id: ", id);
     const {className} = props;
     return (
         <section className={`screen ${className}`} id={id}>
-            <div className="row">
                 {
                     title &&
                     <div className="title">
@@ -16,7 +15,6 @@ export function Screen({ title, children, id, ...props}: ScreenProps) {
                 <div className="content">
                     {children}
                 </div>
-            </div>
         </section>
     );
 }

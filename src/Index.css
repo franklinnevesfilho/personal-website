@@ -1,50 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Arial', monospace, sans-serif;
 }
 
-/* Example CSS */
-body.light {
-    /*Navbar variables*/
-    --header-color: #78adfa;
-    --header-shadow-color: #78adfa;
-    --header-text-color: #000;
-
-    /*Nav variables*/
-    --nav-color: rgba(0, 0, 0, 0.7);
-    --nav-active-color: rgba(0, 0, 0, 1);
-    --nav-glow-color: rgba(0, 0, 0, 1);
-    --nav-glow-secondary: rgba(255, 255, 255, 0.7);
-
-    /*Body variables*/
-    --background-color: #f2f2f2;
-    --text-color: #000;
-    --color-primary: #000;
-
-}
-
-body.dark {
-    /*Navbar variables*/
-    --header-color: #202055;
-    --header-shadow-color: #202055;
-
-    /*Nav variables*/
-    --nav-color: rgb(255, 255, 255);
-    --nav-active-color: rgba(255, 255, 255, 1);
-    --nav-glow-color: rgba(255, 255, 255, 1);
-    --nav-glow-secondary: rgba(0, 0, 0, 0.7);
-
-    --background-color: #2a2a2a;
-    --text-color: #fff;
-    --color-primary: #f2f2f2;
-}
-
 /* Apply variables */
 body {
+    --light-color: #f2f2f2;
+    --dark-color: #2a2a2a;
+
     --nav-item-size: 1rem;
     --nav-item-active-size: 1.3rem;
 
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+body.light {
+
+    /*Navbar variables*/
+    --header-color: var(--dark-color);
+    --header-shadow-color: var(--dark-color);
+
+    /*Nav variables*/
+    --nav-color: rgba(0, 0, 0, 0.7);
+    --nav-scroll-color: white;
+
+    --nav-glow-color: black;
+    --nav-glow-scroll-color: white;
+
+    /*Body variables*/
+    --background-color: #f2f2f2;
+    --text-color: black;
+    --color-primary: black;
+
+}
+
+body.dark {
+    /*Navbar variables*/
+    --header-color: var(--light-color);
+    --header-shadow-color: var(--light-color);
+
+    /*Nav variables*/
+    --nav-color: var(--light-color);
+    --nav-scroll-color: var(--dark-color);
+
+    --nav-glow-color: white;
+    --nav-glow-scroll-color: black;
+
+    --background-color: var(--dark-color);
+    --text-color: white;
+    --color-primary: var(--light-color);
 }

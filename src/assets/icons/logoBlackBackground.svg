@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2561 1441">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3953a4;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: CascadiaMono-SemiBoldItalic, 'Cascadia Mono';
+        font-size: 152.63px;
+        font-style: italic;
+        font-variation-settings: 'wght' 600;
+        font-weight: 600;
+        letter-spacing: -.1em;
+        mix-blend-mode: color-dodge;
+      }
+
+      .cls-2 {
+        fill: #6abd45;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: #ed2024;
+      }
+
+      .cls-5 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-6 {
+        letter-spacing: .14em;
+      }
+
+      .cls-7 {
+        fill: #fff;
+        font-family: SegoeScript-Bold, 'Segoe Script';
+        font-size: 48px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g class="cls-4">
+    <g id="Layer_3">
+      <g>
+        <text class="cls-2" transform="translate(973.25 665.55)"><tspan x="0" y="0">SOFTWARE</tspan><tspan x="0" y="183.16">ENGINEER</tspan></text>
+        <text class="cls-3" transform="translate(968.31 667.08)"><tspan x="0" y="0">SOFTWARE</tspan><tspan x="0" y="183.16">ENGINEER</tspan></text>
+        <text class="cls-1" transform="translate(979.09 664.03)"><tspan x="0" y="0">SOFTWARE</tspan><tspan x="0" y="183.16">ENGINEER</tspan></text>
+      </g>
+      <text class="cls-7" transform="translate(910.4 614.08) rotate(-23.17)"><tspan class="cls-5" x="0" y="0">J</tspan><tspan class="cls-6" x="24.61" y="0">R</tspan><tspan class="cls-5" x="73.39" y="0">.</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,12 +1,12 @@
+import {NavItem} from "@/types";
+import {ContactScreen, HomeScreen, ProjectsScreen} from "@/screens";
+import {Header, Navbar} from "@/components";
 import './style/App.css'
-import {NavItem} from "./types";
-import {AboutScreen, HomeScreen, ProjectsScreen} from "./screens";
-import {Header, Navbar} from "./components";
 
 export function App() {
     const navItems: NavItem[] =[
         {
-            title:'Home',
+            title:'About Me',
             component: HomeScreen
         },
         {
@@ -15,7 +15,7 @@ export function App() {
         },
         {
             title: 'Contact',
-            component: AboutScreen
+            component: ContactScreen
         },
     ]
 
