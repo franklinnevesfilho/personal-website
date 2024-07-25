@@ -22,7 +22,7 @@ export function Header() {
                 <div className="flex w-full justify-start px-4">
                     <div className={`w-full h-full p-2`}>
                         <Icon
-                            className='w-full h-full object-fill'
+                            className='w-auto max-w-[100%] h-auto max-h-[100%] object-fill'
                             name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
                         />
                     </div>
