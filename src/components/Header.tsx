@@ -26,7 +26,7 @@ export function Header() {
     return (
         <Screen className={''}>
             <Icon
-                className='w-full h-auto max-h-32 sm:max-h-48 object-contain'
+                className=''
                 name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
             />
         </Screen>
