@@ -64,7 +64,7 @@ function Navbar({ title, navItems}: NavbarProps) {
                         <h1>{title}</h1>
                     </div>
                 }
-                <div className={`nav w-auto`}>
+                <div className={`nav w-auto ${width > 760 && 'me-10'}`}>
                     <ul className={'nav-list'}>
                         {navItems.map((item, index) => (
                             <li
