@@ -1,6 +1,6 @@
 import {Theme} from "@/types";
 import {createContext, useContext} from "react";
-import {useTheme as themeHook} from "./useTheme.ts";
+import {useTheme as themeHook} from "../hooks/useTheme.ts";
 
 interface ThemeContextProps {
     theme: Theme;
@@ -27,4 +27,5 @@ function useTheme(){
     return context;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export {ThemeProvider, useTheme}

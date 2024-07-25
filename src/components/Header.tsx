@@ -13,13 +13,6 @@ export function Header() {
             <div className="header-img-container">
                 <Icon className={'header-img'} name={theme == 'dark'? 'logoBlack' : 'logoWhite'}/>
             </div>
-            <div className={`absolute top-1/2 right-10 border-2 p-3 rounded-2xl ${theme== 'dark' ? 'border-white': 'border-neutral-800'}`}>
-                <div className="resume-link">
-                    <a href="" target="_blank" rel="noreferrer">
-                        <button className="btn">Resume</button>
-                    </a>
-                </div>
-            </div>
         </div>
     );
 }

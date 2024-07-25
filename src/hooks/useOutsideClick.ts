@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 
 // For Expandable Card animation
-// https://ui.aceternity.com/components/expandable-card
+// https://ui.aceternitnpx uni.com/components/expandable-card
 export const useOutsideClick = (
     ref: React.RefObject<HTMLDivElement>,
     callback: (event: MouseEvent | TouchEvent) => void

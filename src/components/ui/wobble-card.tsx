@@ -51,24 +51,11 @@ export const WobbleCard = ({
                             : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
                         transition: "transform 0.1s ease-out",
                     }}
-                    className={cn("h-full px-4 py-20 sm:px-10", className)}
+                    className={cn('p-6',className)}
                 >
-                    <Noise />
                     {children}
                 </motion.div>
             </div>
         </motion.section>
-    );
-};
-
-const Noise = () => {
-    return (
-        <div
-            className="absolute inset-0 w-full h-full scale-[1.2] transform opacity-10 "
-            style={{
-                backgroundImage: "url(/noise.webp)",
-                backgroundSize: "30%",
-            }}
-        ></div>
     );
 };
