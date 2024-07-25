@@ -17,7 +17,7 @@ export function Header() {
                 <div className="flex justify-start">
                     <div className={`${width > 600 ? 'w-full h-full p-2' : 'w-10/12'}`}>
                         <Icon
-                            className='w-full h-full object-fill'
+                            className='object-contain'
                             name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
                         />
                     </div>
