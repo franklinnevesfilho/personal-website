@@ -3,6 +3,14 @@
     margin: 0 auto;
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
 
 .title{
     font-size: 3rem;

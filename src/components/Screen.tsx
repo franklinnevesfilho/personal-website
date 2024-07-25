@@ -6,13 +6,13 @@ export function Screen({ title, children, id, ...props}: ScreenProps) {
     const {className} = props;
     return (
         <section className={`screen ${className}`} id={id}>
-                {
-                    title &&
-                    <div className="title">
-                        <h1>{title}</h1>
-                    </div>
-                }
                 <div className="content">
+                    {
+                        title &&
+                        <div className="title">
+                            <h1>{title}</h1>
+                        </div>
+                    }
                     {children}
                 </div>
         </section>
