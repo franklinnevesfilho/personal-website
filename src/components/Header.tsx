@@ -1,28 +1,34 @@
-import '@/style/Header.css';
-import {useTheme, useWindowDimensions} from "@/hooks";
+import { useTheme } from "@/hooks";
 import { Icon } from "@/components/ui/Icon.tsx";
+import { Screen } from "@/components/Screen.tsx";
 
 export function Header() {
-    const { theme } = useTheme();
-    const {width} = useWindowDimensions();
+    const {theme} = useTheme();
+
+    // <div className="w-full p-10 mx-5 rounded-lg">
+    //     <div className="text-center mt-4">
+    //         <div className="text-2xl sm:text-4xl">
+    //                     <span className="ms-2 text-4xl sm:text-6xl">
+    //                         Franklin Neves Filho
+    //                     </span>
+    //         </div>
+    //     </div>
+    //     <div className="flex w-full justify-start px-4">
+    //         <div className="flex justify-center items-center w-full p-2 overflow-hidden">
+    //             <Icon
+    //                 className='w-full h-auto max-h-32 sm:max-h-48 object-contain'
+    //                 name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
+    //             />
+    //         </div>
+    //     </div>
+    // </div>
 
     return (
-        <div className={'relative flex flex-col justify-center items-center h-screen'}>
-            <div className={`p-10 mx-5 rounded-lg`}>
-                <div className="text-center mt-4">
-                    <div className={`${width > 600 ? 'text-6xl' : 'text-4xl'}`}>
-                        Franklin Neves Filho
-                    </div>
-                </div>
-                <div className="flex justify-start">
-                    <div className={`${width > 600 ? 'w-full h-full p-2' : 'w-10/12'}`}>
-                        <Icon
-                            className='w-full h-full object-fill'
-                            name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Screen className={''}>
+            <Icon
+                className='w-full h-auto max-h-32 sm:max-h-48 object-contain'
+                name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
+            />
+        </Screen>
     );
 }
