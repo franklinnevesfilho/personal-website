@@ -24,8 +24,15 @@ export function Header() {
     // </div>
 
     return (
-        <Screen className={''}>
-            <div className={'flex w-1/2 h-full mx-auto'}>
+        <Screen>
+            <div className="text-center">
+                <div className="text-2xl sm:text-4xl">
+                    <span className="ms-2 text-4xl sm:text-6xl">
+                        Franklin Neves Filho
+                    </span>
+                </div>
+            </div>
+            <div className={'flex w-full h-full mx-auto'}>
                 <Icon
                     className=''
                     name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
