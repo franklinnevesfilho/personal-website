@@ -19,7 +19,7 @@ export function Header() {
                     <div className={`${width > 600 ? 'text-4xl' : 'text-2xl'}`}>
                     </div>
                 </div>
-                <div className="flex w-full justify-start bg-blue-600 px-4">
+                <div className="flex w-full justify-start px-4">
                     <div className={`w-full h-full p-2`}>
                         <Icon
                             className='w-full h-full object-fill'
