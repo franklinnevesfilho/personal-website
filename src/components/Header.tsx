@@ -32,7 +32,7 @@ export function Header() {
                     </span>
                 </div>
             </div>
-            <div className={'flex w-full h-full mx-auto bg-blue-600'}>
+            <div className={'flex w-full h-full mx-auto'}>
                 <Icon
                     className=''
                     name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
