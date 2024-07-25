@@ -1,26 +1,25 @@
 import '@/style/Header.css';
 import {useTheme, useWindowDimensions} from "@/hooks";
 import { Icon } from "@/components/ui/Icon.tsx";
+import {Screen} from "@/components/Screen.tsx";
 
 export function Header() {
     const { theme } = useTheme();
     const {width} = useWindowDimensions();
 
     return (
-        <div className={'relative flex flex-col justify-center items-center h-screen'}>
-            <div className={`p-10 mx-5 rounded-lg`}>
+        <Screen className={''}>
+            <div className={`w-full p-10 mx-5 rounded-lg`}>
                 <div className="text-center mt-4">
                     <div className={`${width > 600 ? 'text-4xl' : 'text-2xl'}`}>
-                        HI, I'M
-                    </div>
-                    <div className={`${width > 600 ? 'text-6xl' : 'text-4xl'}`}>
-                        Franklin
+                        <span className={`ms-2 ${width > 600 ? 'text-6xl' : 'text-4xl'}`}>
+                            Franklin Neves Filho
+                        </span>
                     </div>
                     <div className={`${width > 600 ? 'text-4xl' : 'text-2xl'}`}>
-                        and I'm a
                     </div>
                 </div>
-                <div className="flex justify-start px-4">
+                <div className="flex w-full justify-start bg-blue-600 px-4">
                     <div className={`w-full h-full p-2`}>
                         <Icon
                             className='w-full h-full object-fill'
@@ -29,6 +28,6 @@ export function Header() {
                     </div>
                 </div>
             </div>
-        </div>
+        </Screen>
     );
 }
