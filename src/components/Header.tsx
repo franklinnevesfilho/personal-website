@@ -20,7 +20,7 @@ export function Header() {
                         and I'm a
                     </div>
                 </div>
-                <div className="flex justify-start bg-amber-600">
+                <div className="flex justify-start">
                     <div className={`w-full h-full p-2`}>
                         <Icon
                             className='w-full h-full object-fill'
