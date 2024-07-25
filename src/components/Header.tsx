@@ -14,16 +14,16 @@ export function Header() {
                         HI, I'M
                     </div>
                     <div className={`${width > 600 ? 'text-6xl' : 'text-4xl'}`}>
-                        Franklin Neves Filho
+                        Franklin
                     </div>
                     <div className={`${width > 600 ? 'text-4xl' : 'text-2xl'}`}>
                         and I'm a
                     </div>
                 </div>
                 <div className="flex justify-start bg-amber-600">
-                    <div className={`w-full h-full`}>
+                    <div className={`w-full h-full p-2`}>
                         <Icon
-                            className='w-full h-full'
+                            className='w-full h-full object-fill'
                             name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
                         />
                     </div>
