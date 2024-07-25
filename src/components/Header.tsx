@@ -25,10 +25,12 @@ export function Header() {
 
     return (
         <Screen className={''}>
-            <Icon
-                className=''
-                name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
-            />
+            <div className={'m-5'}>
+                <Icon
+                    className=''
+                    name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
+                />
+            </div>
         </Screen>
     );
 }
