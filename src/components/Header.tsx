@@ -20,9 +20,8 @@ export function Header() {
                         and I'm a
                     </div>
                 </div>
-                <div className="flex items-center justify-center">
-                    <div className={`w-full h-full
-                `}> {/* Use padding here */}
+                <div className="flex justify-start bg-amber-600">
+                    <div className={`w-full h-full`}>
                         <Icon
                             className='w-full h-full'
                             name={theme === 'dark' ? 'logoBlack' : 'logoWhite'}
