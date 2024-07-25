@@ -56,3 +56,27 @@ body.dark {
     --text-color: white;
     --color-primary: var(--light-color);
 }
+
+.scroll-container {
+    @apply overflow-auto; /* Tailwind utility for scrollable content */
+}
+
+/* WebKit Browsers (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Thumb color */
+    border-radius: 4px; /* Rounded corners for thumb */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Track color */
+}
+
+/* Firefox */
+.scroll-container {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1); /* Thumb and track color */
+}
