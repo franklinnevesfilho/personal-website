@@ -1,5 +1,5 @@
 import {Theme} from "@/types";
-import {createContext, useContext} from "react";
+import React, {createContext, useContext} from "react";
 import {useTheme as themeHook} from "../hooks/useTheme.ts";
 
 interface ThemeContextProps {

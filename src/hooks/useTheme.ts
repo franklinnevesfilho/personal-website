@@ -5,8 +5,9 @@ export const useTheme = () => {
     const getMatchMedia = () => window.matchMedia('(prefers-color-scheme: dark)');
 
     const getInitialTheme = (): Theme => {
-        const storedTheme = localStorage.getItem('theme') as Theme;
-        return storedTheme || (getMatchMedia().matches ? 'dark' : 'light');
+        const storedTheme = localStorage.getItem('theme');
+        console.log(storedTheme);
+        return storedTheme ? (storedTheme as Theme) : (getMatchMedia().matches ? 'dark' : 'light');
     };
 
     const [theme, setTheme] = useState<Theme>(getInitialTheme);

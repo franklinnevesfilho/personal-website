@@ -1,7 +1,7 @@
 import {ScreenProps} from "@/types";
 import {Screen} from "@/components/Screen.tsx";
 import {useWindowDimensions} from "@/hooks/useWindowDimensions.ts";
-import ProjectsMobileScreen from "@/screens/ProjectsMobileScreen.tsx";
+import {ProjectsMobileScreen} from "@/screens/ProjectsMobileScreen.tsx";
 import {Project} from "@/types/Project.ts";
 import {useTheme} from "@/hooks";
 
@@ -23,7 +23,7 @@ export function ProjectsScreen(props : ScreenProps ) {
         },
         {
             name: 'Blind Calculator',
-            description: 'This program was design for Vertilux to help their customers ' +
+            description: 'This program was designed for Vertilux to help their customers ' +
                 'to calculate the amount of fabric needed for their blinds, and to determine what' +
                 'type of blind they need based on their window measurements.',
             technologies: ['Typescript', 'React', 'Chart.js'],
@@ -51,16 +51,11 @@ export function ProjectsScreen(props : ScreenProps ) {
                 className={`cursor-pointer flex flex-col p-4 rounded-xl ${theme == 'dark' ? 'bg-neutral-700' : 'bg-neutral-200 border border-neutral-700'}`}
             >
                 <div onClick={() => window.open(project.github, '_blank')}>
-
                     <CardItem
-                        translateZ={50}
+                        className={'flex flex-col items-center justify-center h-full w-full rounded overflow-hidden cursor-pointer'}
+                        translateZ={80}
                     >
                         <h2 className={'text-2xl '}>{project.name}</h2>
-                    </CardItem>
-                    <CardItem
-                        className={'flex items-center justify-center h-full w-full rounded overflow-hidden cursor-pointer'}
-                        translateZ={50}
-                    >
                         <div>
                             <div className="flex items-center justify-center h-full w-full rounded overflow-hidden">
                                 <img src={project.image} alt={project.name} className={'w-full h-full'}/>
@@ -69,7 +64,7 @@ export function ProjectsScreen(props : ScreenProps ) {
                         </div>
                     </CardItem>
                     <CardItem>
-                        <div className={'mt-2'}>
+                    <div className={'mt-2'}>
                             <h4>Tech used:</h4>
                             <div className={'flex flex-wrap justify-center'}>
                                 {project.technologies.map((technology, index) => (
@@ -91,8 +86,8 @@ export function ProjectsScreen(props : ScreenProps ) {
                         <div className="flex flex-wrap w-full items-center justify-center">
                             {
                                 projects.map((project, index) => (
-                                    <div className={'flex m-5 w-72'}>
-                                        <ProjectCard key={index} project={project}/>
+                                    <div key={index} className={'flex m-5 w-72'}>
+                                        <ProjectCard project={project}/>
                                     </div>
                                 ))
                             }
@@ -101,7 +96,7 @@ export function ProjectsScreen(props : ScreenProps ) {
                 </div>
             </Screen>
         ) :(
-            <ProjectsMobileScreen/>
+            <ProjectsMobileScreen projects={projects} {...props}/>
         )
     );
 }

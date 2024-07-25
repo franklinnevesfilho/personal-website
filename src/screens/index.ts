@@ -1,3 +1,3 @@
 export { ContactScreen } from './ContactScreen.tsx';
-export { HomeScreen } from './HomeScreen';
+export { AboutScreen } from './AboutScreen.tsx';
 export { ProjectsScreen } from './ProjectsScreen';

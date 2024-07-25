@@ -5,7 +5,7 @@ import {Skill as SkillType} from "@/types/Skill.ts";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card.tsx";
 
 
-export function HomeScreen(props:  ScreenProps) {
+export function AboutScreen(props:  ScreenProps) {
     const {width} = useWindowDimensions();
 
     const skills: SkillType[] = [
@@ -43,8 +43,8 @@ export function HomeScreen(props:  ScreenProps) {
 
     return (
         <Screen {...props}>
-            <div className={'flex flex-row justify-between'}>
-                <div className="flex flex-row w-1/2 h-full p-2">
+            <div className={`flex ${width > 760 ? 'flex-row justify-between' : 'flex-col justify-center items-center'}`}>
+                <div className={`flex h-full p-2 ${width > 760? 'w-1/2' : 'w-11/12'}`}>
                     <div className="w-full h-full me-5 self-center">
                         <CardContainer className="w-full h-full ">
                             <CardBody className="content-center w-full h-full">
@@ -98,7 +98,7 @@ export function HomeScreen(props:  ScreenProps) {
                         </CardContainer>
                     </div>
                 </div>
-                <div className={`text-center ${width > 760 ? 'w-1/3' : 'w-1/2'} `}>
+                <div className={`text-center ${width > 760 ? 'w-1/3' : 'w-11/12'} `}>
                     <h2 className={'text-4xl font-bold pt-3'}>About Me</h2>
                     <p>
                         I've always been fascinated by technology and how it can be used to solve
@@ -125,7 +125,7 @@ export function HomeScreen(props:  ScreenProps) {
                     </p>
                 </div>
             </div>
-            <div className="w-auto pt-40 pb-16">
+            <div className={`w-auto pt-10 pb-16`}>
                 <h2 className={'text-4xl font-bold pt-3 text-center mb-5'}>Skills</h2>
                 <div className="flex flex-wrap justify-center">
                     {skills.map((skill, index) => (
