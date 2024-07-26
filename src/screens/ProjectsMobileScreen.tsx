@@ -44,26 +44,26 @@ export function ProjectsMobileScreen({ projects, ...props }: ProjectsMobileScree
             <ul className="max-w-2xl mx-auto w-full gap-4">
                 {projects.map((project) => (
                     <motion.div
-                        layoutId={`card-${project.name}`}
-                        key={`card-${project.name}`}
+                        layoutId={`card-${project.title}`}
+                        key={`card-${project.title}`}
                         onClick={() => setActive(project)}
                         className="p-3 m-5 border flex flex-row md:flex-row justify-between items-center border-neutral-800 dark:border-neutral-200 rounded-xl cursor-pointer"
                     >
-                        <motion.div layoutId={`image-${project.name}`}>
+                        <motion.div layoutId={`image-${project.title}`}>
                             <img
                                 width={100}
                                 height={100}
                                 src={project.image}
-                                alt={project.name}
+                                alt={project.title}
                                 className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                             />
                         </motion.div>
                         <div className="">
                             <motion.h3
-                                layoutId={`title-${project.name}`}
+                                layoutId={`title-${project.title}`}
                                 className="text-2xl text-neutral-800 dark:text-neutral-200 text-center"
                             >
-                                {project.name}
+                                {project.title}
                             </motion.h3>
                             </div>
                     </motion.div>
