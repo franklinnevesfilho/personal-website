@@ -1,6 +1,6 @@
 import {NavItem} from "@/types";
 import {ContactScreen, AboutScreen, ProjectsScreen} from "@/screens";
-import {Header, Navbar} from "@/components";
+import {HomeScreen, Navbar} from "@/components";
 import './style/App.css'
 import {useWindowDimensions} from "@/hooks";
 import MobileNavbar from "@/components/navbar/MobileNavbar.tsx";
@@ -32,7 +32,7 @@ export function App() {
                     <Navbar navItems={navItems}/>
                     )
             }
-            <Header />
+            <HomeScreen />
             <main className="main">
                 {
                     navItems.map((item, index) => {
