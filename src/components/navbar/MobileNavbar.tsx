@@ -53,7 +53,7 @@ function MobileNavbar({ navItems }: MobileNavbarProps) {
     return (
         <div
             ref={menuRef}
-            className={`fixed z-50 flex-col flex items-center px-5 pt-5 pb-3 rounded-b-xl w-full
+            className={`fixed z-50 flex-col flex items-center px-5 pt-[5px] rounded-b-xl w-full
             transition-all duration-500 ease-in-out
             ${(scrollPosition > 50 ? 
                 (theme == 'dark' ? ('bg-neutral-100 shadow-neutral-300') : ('bg-neutral-800 shadow-neutral-950'))

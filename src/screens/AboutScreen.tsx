@@ -3,6 +3,7 @@ import {ScreenProps} from "@/types";
 import {useWindowDimensions} from "@/hooks";
 import {Skill as SkillType} from "@/types/Skill.ts";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card.tsx";
+import images from "@/assets/images";
 
 
 export function AboutScreen(props:  ScreenProps) {
@@ -33,7 +34,6 @@ export function AboutScreen(props:  ScreenProps) {
         {name: 'Git'},
         {name: 'Adobe Illustrator'},
         {name: 'Docker'},
-        {name: 'Kubernetes'},
         {name: 'Agile'},
         {name: 'Scrum'},
         {name: 'Slack'},
@@ -45,22 +45,20 @@ export function AboutScreen(props:  ScreenProps) {
         <Screen {...props}>
             <div className={`flex ${width > 760 ? 'flex-row justify-between' : 'flex-col justify-center items-center'}`}>
                 <div className={`flex h-full p-2 ${width > 760? 'w-1/2' : 'w-11/12'}`}>
-                    <div className="w-full h-full me-5 self-center">
-                        <CardContainer className="w-full h-full ">
+                        <CardContainer className="flex flex-grow bg-neutral-300 dark:bg-white w-full h-full me-5 rounded-2xl">
                             <CardBody className="content-center w-full h-full">
-                                <CardItem
-                                    className={'flex items-center justify-center h-full w-full rounded overflow-hidden cursor-pointer'}
-                                    translateZ={50}
-                                >
+                                    <CardItem
+                                        className="flex items-center justify-center h-full w-full rounded overflow-hidden cursor-pointer"
+                                        translateZ={50}
+                                    >
                                         <img
                                             className="object-cover w-full h-full"
-                                            src="https://via.placeholder.com/150"
+                                            src={images.headshotWhiteShirt}
                                             alt="profile"
                                         />
-                                </CardItem>
+                                    </CardItem>
                             </CardBody>
                         </CardContainer>
-                    </div>
                     <div className="flex pt-0 w-1/3 flex-col">
                         <CardContainer className="flex-grow">
                             <CardBody className="content-center">
