@@ -2,7 +2,7 @@ import { useTheme } from "@/hooks";
 import { Icon } from "@/components/ui/Icon.tsx";
 import { Screen } from "@/components/Screen.tsx";
 
-export function Header() {
+export function HomeScreen() {
     const {theme} = useTheme();
 
     return (

@@ -45,7 +45,7 @@ export function AboutScreen(props:  ScreenProps) {
         <Screen {...props}>
             <div className={`flex ${width > 760 ? 'flex-row justify-between' : 'flex-col justify-center items-center'}`}>
                 <div className={`flex h-full p-2 ${width > 760? 'w-1/2' : 'w-11/12'}`}>
-                        <CardContainer className="flex flex-grow bg-neutral-300 dark:bg-white w-full h-full me-5 rounded-2xl">
+                        <CardContainer className="flex flex-grow bg-neutral-300 dark:bg-white w-full h-full me-5 rounded-2xl ">
                             <CardBody className="content-center w-full h-full">
                                     <CardItem
                                         className="flex items-center justify-center h-full w-full rounded overflow-hidden cursor-pointer"
@@ -53,7 +53,7 @@ export function AboutScreen(props:  ScreenProps) {
                                     >
                                         <img
                                             className="object-cover w-full h-full"
-                                            src={images.headshotWhiteShirt}
+                                            src={images.headshotBlazer}
                                             alt="profile"
                                         />
                                     </CardItem>
@@ -63,32 +63,37 @@ export function AboutScreen(props:  ScreenProps) {
                         <CardContainer className="flex-grow">
                             <CardBody className="content-center">
                                 <CardItem
-                                    className={'flex items-center justify-center rounded overflow-hidden cursor-pointer mb-2'}
+                                    className={`flex items-center justify-center rounded 
+                                    overflow-hidden cursor-pointer mb-2 bg-neutral-800 
+                                    dark:bg-neutral-200 border-2 border-neutral-700 dark:border-neutral-400`}
                                     translateZ={50}
                                 >
                                     <img
                                         className="object-cover w-full h-full"
-                                        src="https://via.placeholder.com/150"
+                                        src={images.demoEd}
                                         alt="profile"
                                     />
                                 </CardItem>
                                 <CardItem
-                                    className={'flex items-center justify-center  rounded overflow-hidden cursor-pointer'}
+                                    className={`flex items-center justify-center rounded 
+                                    overflow-hidden cursor-pointer border-2 border-neutral-700 dark:border-neutral-400`}
                                     translateZ={50}
                                 >
                                     <img
                                         className="object-cover w-full h-full"
-                                        src="https://via.placeholder.com/150"
+                                        src={images.demoEd2}
                                         alt="profile"
                                     />
                                 </CardItem>
                                 <CardItem
-                                    className={'flex items-center justify-center  rounded overflow-hidden cursor-pointer mt-2'}
+                                    className={`flex items-center justify-center 
+                                    rounded overflow-hidden cursor-pointer mt-2 
+                                    border-2 border-neutral-700 dark:border-neutral-400`}
                                     translateZ={50}
                                 >
                                     <img
                                         className="object-cover w-full h-full"
-                                        src="https://via.placeholder.com/150"
+                                        src={images.shellHacks}
                                         alt="profile"
                                     />
                                 </CardItem>
@@ -98,6 +103,9 @@ export function AboutScreen(props:  ScreenProps) {
                 </div>
                 <div className={`text-center ${width > 760 ? 'w-1/3' : 'w-11/12'} `}>
                     <h2 className={'text-4xl font-bold pt-3'}>About Me</h2>
+                    <p>
+                        I'm a first generation Brazilian-American, raised in Miami, Florida. Currently attending <span className={'fiu font-extrabold text-xl'}>FIU</span>.
+                    </p>
                     <p>
                         I've always been fascinated by technology and how it can be used to solve
                         complex problems.
