@@ -1,11 +1,11 @@
 import {ScreenProps} from "@/types";
 import '@/style/Screen.css'
+import {cn} from "@/lib";
 
-export function Screen({ title, children, id, ...props}: ScreenProps) {
-    const {className} = props;
+export function Screen({ title, children, containerClassName, ...props}: ScreenProps) {
     return (
-        <section className={`screen ${className}`} id={id}>
-                <div className="content">
+        <section className={cn('screen', containerClassName)} id={props.id}>
+                <div className={cn('content',props.className)}>
                     {
                         title &&
                         <div className="title">

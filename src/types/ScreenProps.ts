@@ -4,4 +4,5 @@ export interface ScreenProps extends React.DetailedHTMLProps<React.HTMLAttribute
     title?: string;
     children?: React.ReactNode;
     id?: string;
+    containerClassName?: string;
 }
