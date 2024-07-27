@@ -19,7 +19,7 @@ function MobileNavbar({ navItems }: MobileNavbarProps) {
 
     // Close the menu when clicking outside
     useEffect(() => {
-        setOffset(45)
+        setOffset(25)
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
