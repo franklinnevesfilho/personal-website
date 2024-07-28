@@ -12,10 +12,9 @@ export const BentoGrid = ({
     return (
         <div
             className={cn(
-                "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
-                className
-            )}
-        >
+                `grid md:auto-rows-[18rem] 
+                        grid-cols-1 md:grid-cols-3 
+                        gap-4 max-w-7xl mx-auto `, className)}>
             {children}
         </div>
     );
@@ -51,7 +50,7 @@ export const BentoGridItem = ({
             {header}
             <motion.div
                 layoutId={`imageContainer-${title}`}
-                className="flex flex-col h-full justify-evenly group-hover/bento:translate-x-2 transition duration-200 cursor-pointer">
+                className={`flex flex-col h-full justify-evenly group-hover/bento:translate-x-2 transition duration-200 cursor-pointer`}>
                 <motion.div
                     layoutId={`image-${title}`}
                     className={`flex items-center justify-center 

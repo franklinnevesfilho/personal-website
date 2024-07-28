@@ -3,7 +3,8 @@ import {Screen} from "@/components";
 import {useTheme} from "@/hooks";
 import {Icon} from "@/components/ui/Icon.tsx";
 import {Email} from "@/types";
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
+import EmailCard from "@/components/EmailCard.tsx";
 
 export function ContactScreen(props: ScreenProps) {
     const {theme} = useTheme();
@@ -16,58 +17,31 @@ export function ContactScreen(props: ScreenProps) {
     const socials: Social[] = [
         {
             name: 'Github',
-            link: 'www.github.com/franklinnevesfilho',
+            link: 'https://github.com/franklinnevesfilho',
             whiteIcon: 'githubBlack',
             blackIcon: 'githubWhite'
         },
         {
             name: 'Linkedin',
-            link: 'www.linkedin.com/in/franklinnevesfilho',
+            link: 'https://www.linkedin.com/in/franklinnevesfilho/',
             whiteIcon: 'linkedin',
             blackIcon: 'linkedin'
         },
     ]
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const {name, value} = e.target;
-        setEmail({
-            ...email,
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setEmail(prevEmail => ({
+            ...prevEmail,
             [name]: value
-        })
-    }
-
-
-    const EmailCard = () => {
-        return (
-            <div className="flex flex-col items-center justify-center p-4">
-                <div className="flex flex-col items-center justify-center">
-                    <div className="flex flex-col items-center justify-center">
-                        <h1 className="text-2xl font-bold">Send me an email</h1>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                        <input type="text" name="from" value={email.from} onChange={handleInputChange}
-                               placeholder="Your email" className="w-1/2 p-2 my-2"/>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                        <input type="text" name="subject" value={email.subject} onChange={handleInputChange}
-                               placeholder="Subject" className="w-1/2 p-2 my-2"/>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                        <textarea name="body" value={email.body} onChange={handleInputChange}
-                                  placeholder="Message" className="w-1/2 p-2 my-2"/>
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                        <button className="bg-blue-500 text-white p-2 rounded-lg">Send</button>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+        }));
+    }, []);
 
     return (
-        <Screen title={'Contact Me'} className={'pt-screen'} {...props}>
-            <div className={'flex flex-col items-center justify-center'}>
-                <div className="flex flex-row">
+        <Screen title={'Contact Me'} className={''} {...props}>
+            <div className={'flex flex-col items-center justify-center w-full h-full'}>
+                <div className={`flex flex-row h-[10%] mb-3 border-4 w-[80%] rounded-2xl 
+                items-center justify-center border-neutral-800 dark:border-neutral-300`}>
                     <div className="flex flex-row">
                         {socials.map((social, index) => (
                             <a href={social.link} target={'_blank'}
@@ -88,7 +62,7 @@ export function ContactScreen(props: ScreenProps) {
                                         </div>
                                     )
                                 }
-                                <div className="flex items-center justify-center text-3xl">
+                                <div className="flex items-center justify-center text-2xl md:text-3xl">
                                     {social.name}
                                 </div>
                             </a>
@@ -96,9 +70,10 @@ export function ContactScreen(props: ScreenProps) {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <EmailCard/>
-                </div>
+                    <EmailCard
+                        email={email}
+                        handleInputChange={handleInputChange}
+                    />
             </div>
         </Screen>
     );

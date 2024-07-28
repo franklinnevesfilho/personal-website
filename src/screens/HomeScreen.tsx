@@ -15,12 +15,14 @@ export function HomeScreen() {
                             <h1 className="text-2xl text-start text-neutral-100 dark:text-neutral-800">
                                 My name is <span className="text-3xl">Franklin Neves Filho</span>
                             </h1>
-                            <p className=" flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800">
-                                I am a Full Stack Developer, currently a student of Computer Science at Florida International University.
-                            </p>
-                            <p className={'flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800'}>
-                                I'm always looking to expand my knowledge and learn new technologies!
-                            </p>
+                            <div className={`m-2`}>
+                                <p className=" flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800">
+                                    I am a Full Stack Developer, currently a student of Computer Science at Florida International University.
+                                </p>
+                                <p className={'flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800'}>
+                                    I'm always looking to expand my knowledge and learn new technologies!
+                                </p>
+                            </div>
                         </div>
                 </div>
         </Screen>
