@@ -8,3 +8,19 @@
     -webkit-text-stroke: 1px #B6862C;
 }
 
+
+/* Projects Screen */
+
+.projects-link{
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: box-shadow 0.3s;
+
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 var(--nav-glow-color);
+    }
+}

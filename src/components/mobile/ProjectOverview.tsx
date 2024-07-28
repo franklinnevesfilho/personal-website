@@ -1,16 +1,20 @@
 import  { forwardRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Skill } from '@/components';
-import { CloseIcon } from '@/screens/ProjectsMobileScreen.tsx';
+import { CloseIcon } from '@/screens/ProjectsScreen.tsx';
 import { Project } from '@/types/Project.ts';
+import {Icon} from "@/components/ui/Icon.tsx";
+import {Theme} from "@/types";
 
 interface ProjectOverviewProps {
     active: Project | boolean | null;
     setActive: (arg: Project | boolean | null) => void;
+    theme: Theme
 }
 
 // Forward the ref to the div element
-const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>(({ active, setActive }, ref) => {
+const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>((
+    { active, theme, setActive }, ref) => {
     return (
         <>
             <AnimatePresence>
@@ -25,9 +29,11 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>(({ acti
             </AnimatePresence>
             <AnimatePresence>
                 {active && typeof active === 'object' ? (
-                    <div className="fixed inset-0 place-items-center z-[100]">
+                    <div className={`mx-auto my-auto fixed
+                    inset-0 place-items-center z-[100] 
+                    md:w-1/3 md:h-[90%]`}>
                         <motion.button
-                            key={`button-${active.name}`}
+                            key={`button-${active.title}`}
                             layout
                             initial={{
                                 opacity: 0,
@@ -41,38 +47,49 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>(({ acti
                                     duration: 0.05,
                                 },
                             }}
-                            className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-12 w-12"
+                            className={`flex absolute top-2 right-2 
+                            items-center justify-center 
+                            bg-white rounded-full h-12 w-12`}
                             onClick={() => setActive(null)}
                         >
                             <CloseIcon />
                         </motion.button>
                         <motion.div
-                            layoutId={`card-${active.name}`}
+                            layoutId={`card-${active.title}`}
                             ref={ref}
-                            className="w-full h-full flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                            className={`w-full h-full flex flex-col bg-white
+                            dark:bg-neutral-900 sm:rounded-3xl overflow-hidden`}
                         >
-                            <motion.div layoutId={`image-${active.name}`}>
+                            <motion.div layoutId={`image-${active.title}`}>
                                 <img
                                     width={200}
                                     height={200}
                                     src={active.image}
-                                    alt={active.name}
+                                    alt={active.title}
                                     className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                                 />
                             </motion.div>
                             <div className="flex justify-between items-start p-4">
                                 <motion.h3
-                                    layoutId={`title-${active.name}`}
+                                    layoutId={`title-${active.title}`}
                                     className={'text-3xl text-neutral-800 dark:text-neutral-200 text-center'}
                                 >
-                                    {active.name}
+                                    {active.title}
                                 </motion.h3>
                                 <motion.a
-                                    layoutId={`button-${active.name}`}
-                                    href={active.github}
+                                    href={active.link}
                                     target="_blank"
-                                    className={`px-4 py-2 text-sm rounded-full font-bold bg-neutral-700 text-neutral-200 dark:bg-neutral-300 dark:text-neutral-800`}
+                                    layoutId={`button-${active.title}`}
+                                    className={` items-center justify-center 
+                                    hidden md:flex border-4 p-2 
+                                    hover:cursor-pointer
+                                    hover:shadow-neutral-300
+                                    dark:
+                                    rounded-lg text-xl gap-2`}
                                 >
+                                    <Icon
+                                        className={`w-6 h-6`}
+                                        name={theme == 'dark' ? 'githubWhite' : 'githubBlack'}/>
                                     Github
                                 </motion.a>
                             </div>
@@ -82,9 +99,9 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>(({ acti
                             >
                                 <motion.div
                                     layout
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
                                     className={`text-neutral-600 text-xs md:text-sm lg:text-base pb-10 flex flex-col items-start gap-4 
                                         dark:text-neutral-400 scroll-container
                                         [scrollbar-width:none] 
@@ -97,11 +114,15 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>(({ acti
                                         <h3 className={'text-lg'}>
                                             Technologies
                                         </h3>
-                                        <ul className={'list-disc list-inside'}>
-                                            {active.technologies.map((tech, index) => (
-                                                <Skill key={index} name={tech} />
-                                            ))}
-                                        </ul>
+                                        <motion.div
+                                            layoutId={`technologies-${active.title}`}
+                                            className={`w-auto`}>
+                                            <div className="flex flex-wrap justify-center">
+                                                {active.technologies.map((tech, index) => (
+                                                    <Skill key={index} name={tech}/>
+                                                ))}
+                                            </div>
+                                        </motion.div>
                                     </div>
                                 </motion.div>
                             </div>

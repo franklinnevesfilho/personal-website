@@ -1,9 +1,10 @@
 import React from 'react';
 import icons from '@/assets/icons';
+import {IconName} from "@/types";
 
 // Define the types for the props
 interface IconProps extends React.HTMLAttributes<HTMLImageElement> {
-    name: keyof typeof icons;
+    name: IconName
 }
 
 export function Icon({ name, ...props}: IconProps){
