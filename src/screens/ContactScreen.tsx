@@ -1,10 +1,11 @@
-import {ScreenProps, Social} from "@/types";
+import {ScreenProps} from "@/types";
 import {Screen} from "@/components";
 import {useTheme} from "@/hooks";
 import {Icon} from "@/components/ui/Icon.tsx";
 import {Email} from "@/types";
 import React, {useCallback, useState} from "react";
 import EmailCard from "@/components/EmailCard.tsx";
+import {socials} from "@/assets";
 
 export function ContactScreen(props: ScreenProps) {
     const {theme} = useTheme();
@@ -14,20 +15,6 @@ export function ContactScreen(props: ScreenProps) {
         body: ''
     });
 
-    const socials: Social[] = [
-        {
-            name: 'Github',
-            link: 'https://github.com/franklinnevesfilho',
-            whiteIcon: 'githubBlack',
-            blackIcon: 'githubWhite'
-        },
-        {
-            name: 'Linkedin',
-            link: 'https://www.linkedin.com/in/franklinnevesfilho/',
-            whiteIcon: 'linkedin',
-            blackIcon: 'linkedin'
-        },
-    ]
 
     const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -48,7 +35,7 @@ export function ContactScreen(props: ScreenProps) {
                                className="flex items-center justify-center mx-4 p-2 h-[50px]" key={index}>
                                 {
                                     social.blackIcon && social.whiteIcon && (
-                                        <div className="flex items-center justify-center w-1/2 h-full mr-2">
+                                        <div className="flex items-center justify-center h-full mr-2">
                                             {
                                                 theme === 'dark' ? (
                                                     <Icon name={social.blackIcon} className="w-full h-full object-contain"/>
@@ -62,7 +49,7 @@ export function ContactScreen(props: ScreenProps) {
                                         </div>
                                     )
                                 }
-                                <div className="flex items-center justify-center text-2xl md:text-3xl">
+                                <div className="hidden md:flex items-center justify-center text-2xl md:text-3xl">
                                     {social.name}
                                 </div>
                             </a>

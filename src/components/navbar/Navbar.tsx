@@ -36,7 +36,10 @@ function Navbar({ title, navItems }: NavbarProps) {
                                                   scrollTo(item);
                                               }} />
                         ))}
-                        <NavItemComponent title={'Resume'} />
+                        <NavItemComponent title={'Resume'} onClick={(e)=>{
+                            e.preventDefault();
+                            window.open('https://drive.google.com/drive/folders/1DTTaYF4nrGWWw188rHLHPW1CDhCahFU0?usp=drive_link', '_blank')
+                        }} />
                         <ThemeToggle />
                     </ul>
                 </div>
