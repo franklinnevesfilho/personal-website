@@ -31,8 +31,13 @@ export function ContactScreen(props: ScreenProps) {
                 items-center justify-center border-neutral-800 dark:border-neutral-300`}>
                     <div className="flex flex-row">
                         {socials.map((social, index) => (
-                            <a href={social.link} target={'_blank'}
-                               className="flex items-center justify-center mx-4 p-2 h-[50px]" key={index}>
+                            <a
+                                href={social.link} target={'_blank'}
+                               className={`flex items-center justify-center mx-4 p-2 h-[50px] shadow shadow-transparent
+                                hover:cursor-pointer hover:shadow-neutral-800 hover:dark:shadow-neutral-200
+                                transition duration-300 ease-in-out rounded-2xl
+                               `}
+                                key={index}>
                                 {
                                     social.blackIcon && social.whiteIcon && (
                                         <div className="flex items-center justify-center h-full mr-2">
@@ -49,7 +54,9 @@ export function ContactScreen(props: ScreenProps) {
                                         </div>
                                     )
                                 }
-                                <div className="hidden md:flex items-center justify-center text-2xl md:text-3xl">
+                                <div className={`hidden md:flex items-center justify-center text-2xl md:text-3xl
+                                text-neutral-800 dark:text-neutral-200 w-full h-full object-contain                             
+                                `}>
                                     {social.name}
                                 </div>
                             </a>

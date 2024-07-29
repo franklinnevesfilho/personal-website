@@ -13,7 +13,7 @@ function EmailCard({email, handleInputChange}: EmailCardProps) {
             text-neutral-200 `}>
             <div className="flex flex-col items-center justify-center w-full">
                 <div className="flex flex-col items-center justify-center w-full">
-                    <h1 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200">Send me an email</h1>
+                    <h1 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 capitalize">Send me an email</h1>
                 </div>
                 <div className="flex flex-col items-center justify-center w-full">
                     <input
@@ -49,7 +49,9 @@ function EmailCard({email, handleInputChange}: EmailCardProps) {
                     />
                 </div>
                 <div className="flex flex-col items-center justify-center w-full">
-                    <button className="w-[60%] md:w-1/4 bg-blue-500 text-white p-2 rounded-lg">
+                    <button className={`w-[60%] md:w-1/4 bg-green-600 text-white p-2 rounded-lg
+                    hover:bg-green-900 hover:cursor-pointer hover:shadow-neutral-300
+                    `}>
                         Send
                     </button>
                 </div>

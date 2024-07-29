@@ -17,7 +17,7 @@ export function HomeScreen() {
                                 <div className="text-2xl text-start text-neutral-100 dark:text-neutral-800">
                                     I'm <span className="text-3xl">Franklin Neves Filho</span>
                                 </div>
-                                <div className="flex items-center justify-center h-8 gap-2">
+                                <div className="flex items-center justify-center h-8 gap-4">
                                     {
                                         socials.map((social, index) => (
                                             social.blackIcon && social.whiteIcon && (
@@ -41,9 +41,9 @@ export function HomeScreen() {
                                     }
                                 </div>
                             </div>
-                            <div className={`m-2`}>
+                            <div className={`border-t border-neutral-200 dark:border-neutral-800 m-2`}>
                                 <p className=" flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800">
-                                    I am a Full Stack Developer, currently a student of Computer Science at Florida International University.
+                                    I am a Full Stack Developer, currently a studying Computer Science at Florida International University.
                                 </p>
                                 <p className={'flex flex-wrap text-lg text-neutral-100 dark:text-neutral-800'}>
                                     I'm always looking to expand my knowledge and learn new technologies!

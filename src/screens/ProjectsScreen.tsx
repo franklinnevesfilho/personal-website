@@ -67,9 +67,9 @@ export function ProjectsScreen(props : ScreenProps) {
 
     return (
         <Screen title={'Recent Projects'} {...props}>
-                <ProjectOverview
-                    theme={theme}
-                    active={active}
+            <ProjectOverview
+                theme={theme}
+                active={active}
                     setActive={setActive}
                     ref={ref}
                 />
@@ -83,31 +83,30 @@ export function ProjectsScreen(props : ScreenProps) {
                             className={`flex flex-row items-center justify-between md:min-h-[100px]
                             shadow-black
                             cursor-pointer hover:shadow-lg bg-white dark:shadow-white dark:bg-transparent
-                            border border-neutral-800 dark:border-neutral-200 p-2 rounded-2xl
+                            border border-neutral-800 dark:border-neutral-200 p-2 rounded-2xl 
                             `}
                         >
                             <motion.div
-                                className={`'flex h-full items-center justify-center rounded-lg'`}
+                                className={`'flex flex-col items-center justify-center rounded-lg'`}
                                 layoutId={`image-${project.title}`}>
                                 <img
-                                    src={project.image}
+                                    src={project.image ? project.image : 'https://via.placeholder.com/150'}
                                     alt={project.title}
                                     className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-lg object-top object-cover"
                                 />
                             </motion.div>
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-col flex-wrap max-w-[40%] gap-3 items-end justify-center">
                                 <motion.h3
                                     layoutId={`title-${project.title}`}
                                     className={`flex items-center justify-center text-2xl text-neutral-800 
-                                    font-bold
-                                    dark:text-neutral-200 text-center`}
+                                    font-bold dark:text-neutral-200 text-center`}
                                 >
                                     {project.title}
                                 </motion.h3>
                                 <motion.div
                                     layoutId={`technologies-${project.title}`}
                                     className={`w-auto`}>
-                                    <div className="flex flex-wrap justify-center">
+                                    <div className="flex flex-row flex-wrap justify-end items-center">
                                         {project.technologies.map((tech, index) => (
                                             <Skill key={index} name={tech}/>
                                         ))}

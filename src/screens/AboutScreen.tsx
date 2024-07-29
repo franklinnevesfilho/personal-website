@@ -104,7 +104,8 @@ export function AboutScreen(props:  ScreenProps) {
                 <div className={`text-center ${width > 760 ? 'w-1/3' : 'w-11/12'} `}>
                     <h2 className={'text-4xl font-bold pt-3'}>About Me</h2>
                     <p>
-                        I'm a first generation Brazilian-American, raised in Miami, Florida. Currently attending <span className={'fiu font-extrabold text-xl'}>FIU</span>.
+                        I'm a first generation Brazilian-American, raised in Miami, Florida. Currently attending
+                        <span className={'fiu font-extrabold text-xl'}> FIU</span>.
                     </p>
                     <p>
                         I've always been fascinated by technology and how it can be used to solve
@@ -120,10 +121,6 @@ export function AboutScreen(props:  ScreenProps) {
                     </p>
                     <p>
                         I started by learning Java, then moved to web development with HTML, CSS, and JavaScript.
-                    </p>
-                    <p>
-                        I'm currently learning Python and ReactNative to build mobile apps.
-                        My most recent project is a mobile app that suggests outfits based on the occasion, and weather.
                     </p>
                     <p>
                         I'm constantly learning and improving my skills, and I'm excited to see where my journey takes
