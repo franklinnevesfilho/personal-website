@@ -4,12 +4,14 @@ import { NavItem } from "@/types";
 export function useScrollSpy(navItems: NavItem[]) {
     const [offset, setOffset] = useState<number>(30);
     const [active, setActive] = useState<string>('');
-    const [scrollPosition, setScrollPosition] = useState<number>(0); // New state for scroll position
+    const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [scrollToActive, setScrollToActive] = useState<boolean>(false);
 
     const handleScroll = useCallback(() => {
+        if (scrollToActive) return; // Disable updating active during scroll-to action
+
         const currentScrollPosition = window.scrollY;
-        setScrollPosition(currentScrollPosition); // Update scroll position state
+        setScrollPosition(currentScrollPosition);
 
         const scrollPosition = currentScrollPosition + window.innerHeight / 2;
         let foundActiveId = '';
@@ -26,7 +28,7 @@ export function useScrollSpy(navItems: NavItem[]) {
             }
         }
 
-        if (foundActiveId !== active && !scrollToActive) {
+        if (foundActiveId !== active) {
             setActive(foundActiveId);
         }
     }, [active, navItems, scrollToActive]);
@@ -47,15 +49,16 @@ export function useScrollSpy(navItems: NavItem[]) {
             });
 
             const checkScrollCompletion = () => {
-                if (Math.abs(window.scrollY - (element.offsetTop + offset)) < 1) {
+                if (Math.abs(window.scrollY - (element.offsetTop - offset)) < 1) {
                     setScrollToActive(false);
                 } else {
                     requestAnimationFrame(checkScrollCompletion);
                 }
             };
+
             requestAnimationFrame(checkScrollCompletion);
         }
     };
 
-    return { active, setActive, scrollPosition, scrollTo, setOffset }; // Return scrollPosition along with active and scrollTo
+    return { active, setActive, scrollPosition, scrollTo, setOffset };
 }
