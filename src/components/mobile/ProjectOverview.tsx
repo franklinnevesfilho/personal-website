@@ -64,7 +64,7 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>((
                                 <img
                                     width={200}
                                     height={200}
-                                    src={active.image}
+                                    src={active.image ? active.image : 'https://via.placeholder.com/150'}
                                     alt={active.title}
                                     className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                                 />
