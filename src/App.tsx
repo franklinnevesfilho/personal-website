@@ -50,7 +50,7 @@ export function App() {
     const application = () =>{
         const path = window.location.pathname;
 
-        if (path == '/resume'){
+        if (path.endsWith('resume')){
             return <ResumeScreen/>
         }else{
             return <MainApp/>;
