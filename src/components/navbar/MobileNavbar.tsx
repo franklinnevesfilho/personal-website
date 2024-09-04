@@ -112,6 +112,13 @@ function MobileNavbar({ navItems }: MobileNavbarProps) {
                     {navItems.map((item, index) => (
                         <NavItemComponent key={index} title={item.title} />
                     ))}
+                    <NavItemComponent
+                        title="Resume"
+                        onClick={(event) =>{
+                            event.preventDefault()
+                            window.open('/resume', '_blank');
+                        }}
+                    />
                 </ul>
             </div>
         </div>

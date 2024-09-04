@@ -1,5 +1,5 @@
 import {NavItem} from "@/types";
-import {ContactScreen, AboutScreen, ProjectsScreen} from "@/screens";
+import {ContactScreen, AboutScreen, ProjectsScreen, ResumeScreen} from "@/screens";
 import {HomeScreen, Navbar} from "@/components";
 import './style/App.css'
 import {useWindowDimensions} from "@/hooks";
@@ -23,25 +23,43 @@ export function App() {
         },
     ]
 
+    const MainApp = () =>{
+        return(
+            <>
+                {
+                    width < 768 ? (
+                        <MobileNavbar navItems={navItems}/>
+                    ) :(
+                        <Navbar navItems={navItems}/>
+                    )
+                }
+                <HomeScreen />
+                <main className="main">
+                    {
+                        navItems.map((item, index) => {
+                            return item.component ? (
+                                <item.component key={index} id={item.title}/>
+                            ) : null
+                        })
+                    }
+                </main>
+            </>
+        )
+    }
+
+    const application = () =>{
+        const path = window.location.pathname;
+
+        if (path == '/resume'){
+            return <ResumeScreen/>
+        }else{
+            return <MainApp/>;
+        }
+    }
+
     return (
         <>
-            {
-                width < 768 ? (
-                    <MobileNavbar navItems={navItems}/>
-                ) :(
-                    <Navbar navItems={navItems}/>
-                    )
-            }
-            <HomeScreen />
-            <main className="main">
-                {
-                    navItems.map((item, index) => {
-                        return item.component ? (
-                            <item.component key={index} id={item.title}/>
-                        ) : null
-                    })
-                }
-            </main>
+            {application()}
         </>
     );
 }
