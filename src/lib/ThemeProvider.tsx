@@ -2,7 +2,7 @@ import {Theme} from "@/types";
 import React, {createContext, useContext} from "react";
 import {useTheme as themeHook} from "../hooks/useTheme.ts";
 
-interface ThemeContextProps {
+export interface ThemeContextProps {
     theme: Theme;
     setTheme: (theme: Theme) => void;
 }

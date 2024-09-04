@@ -38,7 +38,7 @@ function Navbar({ title, navItems }: NavbarProps) {
                         ))}
                         <NavItemComponent title={'Resume'} onClick={(e)=>{
                             e.preventDefault();
-                            window.open('https://drive.google.com/drive/folders/1DTTaYF4nrGWWw188rHLHPW1CDhCahFU0?usp=drive_link', '_blank')
+                            window.open('/resume', '_blank');
                         }} />
                         <ThemeToggle />
                     </ul>
