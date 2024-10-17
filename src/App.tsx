@@ -51,8 +51,10 @@ export function App() {
         const path = window.location.pathname;
 
         if (path.endsWith('resume')){
+            console.log("in resume",path);
             return <ResumeScreen/>
         }else{
+            console.log(path);
             return <MainApp/>;
         }
     }
