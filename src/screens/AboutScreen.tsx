@@ -53,7 +53,7 @@ export function AboutScreen(props:  ScreenProps) {
                                     >
                                         <img
                                             className="object-cover w-full h-full"
-                                            src={images.headshotBlazer}
+                                            src={images.proHeadshot}
                                             alt="profile"
                                         />
                                     </CardItem>
@@ -70,7 +70,7 @@ export function AboutScreen(props:  ScreenProps) {
                                 >
                                     <img
                                         className="object-cover w-full h-full"
-                                        src={images.demoEd}
+                                        src={images.SHPEConvention}
                                         alt="profile"
                                     />
                                 </CardItem>
