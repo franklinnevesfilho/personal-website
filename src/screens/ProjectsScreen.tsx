@@ -105,13 +105,12 @@ export function ProjectsScreen(props : ScreenProps) {
                                 </motion.h3>
                                 <motion.div
                                     layoutId={`technologies-${project.title}`}
-                                    className={`w-auto`}>
-                                    <div className="flex flex-row flex-wrap justify-end items-center">
-                                        {project.technologies.map((tech, index) => (
-                                            <Skill key={index} name={tech}/>
-                                        ))}
-                                    </div>
+                                    className="hidden md:flex flex-row flex-wrap justify-end items-center ">
+                                    {project.technologies.map((tech, index) => (
+                                        <Skill key={index} name={tech}/>
+                                    ))}
                                 </motion.div>
+
                             </div>
                         </motion.div>
                     ))}

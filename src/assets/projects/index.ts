@@ -1,7 +1,11 @@
 import blindCalculator from './blindCalculator.png'
+import vertilux from './vertilux.png'
+import duckyLogo from './DuckyLogo.png'
 import hangman from './hangman.png'
 import memoryGame from './memorygame.jpg'
 import weatherApp from './weatherapp.png'
+import outfitFinder from './outfitfinder.png'
+import spsLogo from './sps_logo.png'
 import {Project} from "@/types/Project.ts";
 
 
@@ -13,13 +17,35 @@ export const projects: Project[] = [
         and collect the necessary data to train another model, that would predict and entire outfit choice based on the user's preference's and the specific occasion. This
         project was designed with the intention of being flexible with the technology stack it can be implemented with. By creating interfaces and abstract classes, the project
         can be implemented with any front-end and back-end technologies.`,
+        image: outfitFinder,
         link: 'https://github.com/franklinnevesfilho/outfit-finder-backend.git',
         technologies: ['React Native', 'Python', 'FastAPI', 'Postman', 'MySQL', 'MongoDB','JWT', 'S3 Buckets', 'AWS', 'Docker']
+    },
+    {
+        title: 'Vertilux Blind Optimizer',
+        description:`This project was created for Vertilux, a company that specializes in window coverings. 
+        The goal of this project was to design a full stack application that would take in the window measurements 
+        and preform the necessary calculations to determine what components are best suited for the window. An API was designed and implemented
+        that connected with the Vertilux ERP system, acquiring the necessary information to make the calculations.
+        The front-end was designed to be user friendly and intuitive, allowing the user to input the measurements and see the results in real time.`,
+        image: vertilux,
+        link: 'https://github.com/franklinnevesfilho/Vertilux-ShadeOptimizer-Backend',
+        technologies: ['React', 'TypeScript', 'Java', 'SpringBoot', 'Firebase']
+    },
+    {
+        title: 'Ducky',
+        description:`This is an image sharing social media platform, where I designed and implemented the structure for the Backend development. 
+        Utilizing the FastAPI framework and the Pydantic library for data validation, I was able to create a seamless integration process for all developers.
+        I coordinated with 2 other developers to bring the functionality and features of the platform to life.`,
+        image: duckyLogo,
+        technologies: ['Python', 'FastAPI', 'Postman', 'SupaBase', 'Firebase Authentication'],
+
     },
     {
         title:'Students Pay Students',
         description:`This project was the result of a 4 person collaboration in my Software Engineering class. We created Use Cases, UML diagrams, and a full stack application.
         The idea was to create a platform where students could post their old notebooks, notes, pdfs, supplies and other items for sale.`,
+        image: spsLogo,
         link: 'https://github.com/franklinnevesfilho/SNB.git',
         technologies: ['React', 'Javascript', 'TailwindCSS', 'Postman', 'Java', 'Spring Boot', 'SpringSecurity', 'MySQL', 'JWT']
     },

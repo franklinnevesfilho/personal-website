@@ -76,22 +76,25 @@ const ProjectOverview = forwardRef<HTMLDivElement, ProjectOverviewProps>((
                                 >
                                     {active.title}
                                 </motion.h3>
-                                <motion.a
-                                    href={active.link}
-                                    target="_blank"
-                                    layoutId={`button-${active.title}`}
-                                    className={` items-center justify-center 
+                                {
+                                    active.link &&
+                                    <motion.a
+                                        href={active.link}
+                                        target="_blank"
+                                        layoutId={`button-${active.title}`}
+                                        className={` items-center justify-center 
                                     hidden md:flex border-4 p-2 
                                     hover:cursor-pointer
                                     hover:shadow-neutral-300
                                     dark:
                                     rounded-lg text-xl gap-2`}
-                                >
-                                    <Icon
-                                        className={`w-6 h-6`}
-                                        name={theme == 'dark' ? 'githubWhite' : 'githubBlack'}/>
-                                    Github
-                                </motion.a>
+                                    >
+                                        <Icon
+                                            className={`w-6 h-6`}
+                                            name={theme == 'dark' ? 'githubWhite' : 'githubBlack'}/>
+                                        Github
+                                    </motion.a>
+                                }
                             </div>
                             <div
                                 onClick={() => setActive(null)}
